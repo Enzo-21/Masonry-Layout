@@ -19,30 +19,6 @@ const masonryLayout = (containerElem, itemsElems, columns) => {
 };
 
 
-// Define our viewportWidth variable
-var viewportWidth;
-
-// Set/update the viewportWidth value
-var setViewportWidth = function () {
-	viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-}
-
+masonryLayout(document.getElementById('gallery'), document.querySelectorAll('.gallery-item'), 3)
 // Log the viewport width into the console
-var logWidth = function () {
-	if (viewportWidth > 640) {
-		masonryLayout(document.getElementById('gallery'), document.querySelectorAll('.gallery-item'), 3)
-	} else {
-		masonryLayout(document.getElementById('gallery'), document.querySelectorAll('.gallery-item'), 2)
-	}
-}
-
-// Set our initial width and log it
-setViewportWidth();
-logWidth();
-
-// On resize events, recalculate and log
-window.addEventListener('resize', function () {
-	setViewportWidth();
-	logWidth();
-}, false);
 
